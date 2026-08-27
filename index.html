@@ -1,1 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Common Measure Institute | Economics, Energy & Public Policy</title>
+
+  <meta
+    name="description"
+    content="Independent analysis of economics, energy and public policy. Different claims. A common measure."
+  >
+  <meta name="author" content="Common Measure Institute">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://commonmeasureinstitute.org/">
+
+  <!--
+    LOGO
+    Keep a file called logo.png in the SAME GitHub folder as index.html.
+  -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- LinkedIn / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Common Measure Institute">
+  <meta property="og:title" content="Common Measure Institute">
+  <meta
+    property="og:description"
+    content="Independent analysis of economics, energy and public policy. Different claims. A common measure."
+  >
+  <meta property="og:url" content="https://commonmeasureinstitute.org/">
+  <meta property="og:image" content="https://commonmeasureinstitute.org/logo.png">
+  <meta property="og:image:alt" content="Common Measure Institute logo">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Common Measure Institute">
+  <meta
+    name="twitter:description"
+    content="Independent analysis of economics, energy and public policy. Different claims. A common measure."
+  >
+  <meta name="twitter:image" content="https://commonmeasureinstitute.org/logo.png">
+
+  <!-- Basic organisation metadata for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Common Measure Institute",
+    "url": "https://commonmeasureinstitute.org/",
+    "logo": "https://commonmeasureinstitute.org/logo.png",
+    "description": "Independent analysis of economics, energy and public policy.",
+    "sameAs": [
+      "https://github.com/The-Common-Measure-Institute"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #062a5b;
+      --navy-deep: #031d42;
+      --cream: #f4eed5;
+      --paper: #f7f5ef;
+      --paper-dark: #ece8dc;
+      --ink: #14212b;
+      --ink-soft: #4b555d;
+      --line: #d5d0c3;
+      --max: 1120px;
+      --shadow: 0 18px 45px rgba(3, 29, 66, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--navy);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 245, 239, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      width: min(calc(100% - 40px), var(--max));
+      min-height: 78px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      flex: 0 0 auto;
+      border: 1px solid rgba(6, 42, 91, 0.12);
+    }
+
+    .brand-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.075em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    main {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 92px 0 84px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 72px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0;
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 28px;
+      font-size: clamp(46px, 7vw, 84px);
+      line-height: 0.99;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+
+    .hero-intro {
+      max-width: 750px;
+      margin-bottom: 28px;
+      color: var(--ink-soft);
+      font-size: clamp(19px, 2vw, 24px);
+      line-height: 1.5;
+    }
+
+    .hero-rule {
+      max-width: 660px;
+      margin: 0;
+      padding-left: 20px;
+      border-left: 3px solid var(--navy);
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .hero-rule strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-logo-panel {
+      width: min(100%, 360px);
+      justify-self: end;
+      padding: 12px;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-logo {
+      width: 100%;
+      height: auto;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 42px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 42px;
+    }
+
+    h2 {
+      max-width: 800px;
+      margin-bottom: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-weight: 500;
+    }
+
+    .framework {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .framework-item {
+      min-height: 230px;
+      padding: 30px 26px;
+      background: var(--paper);
+    }
+
+    .framework-number {
+      display: inline-block;
+      margin-bottom: 38px;
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .framework-item h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    .framework-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .research-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .research-card h3 {
+      margin-bottom: 12px;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .research-card p {
+      max-width: 475px;
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .latest-shell {
+      padding: 44px;
+      color: var(--cream);
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .latest-shell .section-kicker {
+      color: var(--cream);
+      opacity: 0.82;
+    }
+
+    .latest-shell h2 {
+      color: var(--cream);
+    }
+
+    .latest-list {
+      margin-top: 36px;
+      border-top: 1px solid rgba(244, 238, 213, 0.22);
+    }
+
+    .publication {
+      padding: 27px 0;
+      display: grid;
+      grid-template-columns: 160px 1fr auto;
+      gap: 26px;
+      align-items: start;
+      border-bottom: 1px solid rgba(244, 238, 213, 0.22);
+    }
+
+    .publication-meta {
+      color: rgba(244, 238, 213, 0.68);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.55;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .publication h3 {
+      margin: 0 0 8px;
+      color: var(--cream);
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .publication p {
+      margin: 0;
+      color: rgba(244, 238, 213, 0.78);
+    }
+
+    .publication-status {
+      color: var(--cream);
+      opacity: 0.8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .principles-copy .section-kicker {
+      margin-bottom: 14px;
+    }
+
+    .principles-copy h2 {
+      margin-bottom: 24px;
+    }
+
+    .principles-copy p:last-child {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 20px;
+    }
+
+    .principles-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .principles-list li {
+      padding: 17px 0;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 18px;
+    }
+
+    .principles-list span {
+      padding-top: 5px;
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .common-measure {
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .common-measure .section-kicker {
+      margin-bottom: 16px;
+    }
+
+    .common-measure h2 {
+      max-width: 840px;
+      margin: 0 auto 28px;
+      font-size: clamp(34px, 5vw, 58px);
+    }
+
+    .common-measure p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+      font-size: 20px;
+    }
+
+    footer {
+      color: var(--cream);
+      background: var(--navy-deep);
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 38px 0 42px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+    }
+
+    .footer-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(244, 238, 213, 0.72);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 46px;
+        padding: 78px 0 66px;
+      }
+
+      .hero-logo-panel {
+        width: min(70vw, 360px);
+        justify-self: start;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .framework {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .publication {
+        grid-template-columns: 130px 1fr;
+      }
+
+      .publication-status {
+        grid-column: 2;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav,
+      main,
+      .footer-inner {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .brand-text {
+        max-width: 170px;
+        font-size: 11px;
+        letter-spacing: 0.045em;
+      }
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links a:not(:last-child) {
+        display: none;
+      }
+
+      .hero {
+        padding: 58px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(43px, 14vw, 64px);
+      }
+
+      .hero-logo-panel {
+        width: min(82vw, 330px);
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .framework,
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .framework-item {
+        min-height: auto;
+      }
+
+      .framework-number {
+        margin-bottom: 24px;
+      }
+
+      .latest-shell {
+        padding: 29px 22px;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .publication-status {
+        grid-column: 1;
+      }
+
+      .common-measure {
+        padding: 70px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+
+      <!-- LOGO USED IN THE TOP-LEFT HEADER -->
+      <a class="brand" href="#top" aria-label="Common Measure Institute home">
+        <img
+          class="brand-logo"
+          src="logo.png"
+          alt=""
+          aria-hidden="true"
+        >
+        <span class="brand-text">Common Measure Institute</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#approach">Approach</a>
+        <a
+          href="https://github.com/The-Common-Measure-Institute"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Economics · Energy · Public Policy</p>
+
+        <h1 id="hero-title">
+          Different claims.<br>
+          A common measure.
+        </h1>
+
+        <p class="hero-intro">
+          Independent analysis of economics, energy and public policy,
+          grounded in evidence, transparent assumptions and the practical
+          constraints that shape real-world outcomes.
+        </p>
+
+        <p class="hero-rule">
+          <strong>Measure first. Interpret second.</strong>
+          Establish the numbers, identify the constraints, test the economics
+          and then form a view.
+        </p>
+      </div>
+
+      <!-- LARGE LOGO USED IN THE HERO -->
+      <div class="hero-logo-panel">
+        <img
+          class="hero-logo"
+          src="logo.png"
+          alt="The Common Measure Institute"
+        >
+      </div>
+    </section>
+
+    <section id="approach" aria-labelledby="approach-title">
+      <div class="section-heading">
+        <p class="section-kicker">Analytical approach</p>
+
+        <h2 id="approach-title">
+          Start with what can be measured, not with the preferred narrative.
+        </h2>
+      </div>
+
+      <div class="framework">
+        <article class="framework-item">
+          <span class="framework-number">01</span>
+          <h3>What are the numbers?</h3>
+          <p>
+            Supply, demand, costs, prices, returns, physical quantities and
+            observable outcomes.
+          </p>
+        </article>
+
+        <article class="framework-item">
+          <span class="framework-number">02</span>
+          <h3>What are the constraints?</h3>
+          <p>
+            Geology, technology, infrastructure, capital, institutions,
+            policy and time.
+          </p>
+        </article>
+
+        <article class="framework-item">
+          <span class="framework-number">03</span>
+          <h3>What are the economics?</h3>
+          <p>
+            Cost curves, cash flows, investment returns, incentives,
+            trade-offs and opportunity costs.
+          </p>
+        </article>
+
+        <article class="framework-item">
+          <span class="framework-number">04</span>
+          <h3>What follows?</h3>
+          <p>
+            The implications for markets, companies, investors, governments
+            and public policy.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="section-heading">
+        <p class="section-kicker">Areas of inquiry</p>
+
+        <h2 id="research-title">
+          Research focused on consequential questions where evidence can
+          narrow the argument.
+        </h2>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <h3>Energy &amp; Resources</h3>
+          <p>
+            Oil, gas, LNG, power, energy security, resource economics and the
+            evolution of energy systems.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <h3>Economics &amp; Investment</h3>
+          <p>
+            Project economics, cost competitiveness, corporate finance,
+            capital allocation and portfolio resilience.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <h3>Transition &amp; Technology</h3>
+          <p>
+            Renewables, nuclear, hydrogen, ammonia, carbon capture, storage
+            and emerging energy technologies.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <h3>Policy &amp; Political Economy</h3>
+          <p>
+            Industrial policy, trade, geopolitics, regulation and the
+            interaction between markets and governments.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="latest-title">
+      <div class="latest-shell">
+        <p class="section-kicker">Latest analysis</p>
+
+        <h2 id="latest-title">
+          Research notes and quantitative analysis.
+        </h2>
+
+        <!--
+          These are placeholders.
+          Later, each item can link to a real published analysis.
+        -->
+        <div class="latest-list">
+
+          <article class="publication">
+            <div class="publication-meta">
+              Analysis<br>
+              Coming soon
+            </div>
+
+            <div>
+              <h3>First publication</h3>
+              <p>
+                Quantitative analysis with explicit assumptions, source trail
+                and methodology.
+              </p>
+            </div>
+
+            <div class="publication-status">In preparation</div>
+          </article>
+
+          <article class="publication">
+            <div class="publication-meta">
+              Research note<br>
+              Coming soon
+            </div>
+
+            <div>
+              <h3>Research notes</h3>
+              <p>
+                Shorter examinations of markets, technologies, policy
+                questions and emerging evidence.
+              </p>
+            </div>
+
+            <div class="publication-status">In preparation</div>
+          </article>
+
+          <article class="publication">
+            <div class="publication-meta">
+              Methods<br>
+              Coming soon
+            </div>
+
+            <div>
+              <h3>Methods &amp; data</h3>
+              <p>
+                Selected assumptions, calculations, public datasets and
+                analytical tools supporting published work.
+              </p>
+            </div>
+
+            <div class="publication-status">In preparation</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="principles-title">
+      <div class="principles">
+
+        <div class="principles-copy">
+          <p class="section-kicker">Publication principles</p>
+
+          <h2 id="principles-title">
+            Evidence should be inspectable.
+          </h2>
+
+          <p>
+            Common Measure aims to make the chain from evidence to conclusion
+            visible. Where practical, published work identifies its
+            assumptions, sources, uncertainties and limitations rather than
+            hiding them behind a headline conclusion.
+          </p>
+        </div>
+
+        <ol class="principles-list">
+          <li><span>01</span><div>Evidence before narrative.</div></li>
+          <li><span>02</span><div>Quantification where possible.</div></li>
+          <li><span>03</span><div>Assumptions made explicit.</div></li>
+          <li><span>04</span><div>Alternatives compared on a consistent basis.</div></li>
+          <li><span>05</span><div>Uncertainty and limitations acknowledged.</div></li>
+          <li><span>06</span><div>Conclusions open to revision as evidence changes.</div></li>
+        </ol>
+
+      </div>
+    </section>
+
+    <section class="common-measure" aria-labelledby="measure-title">
+      <p class="section-kicker">The Common Measure</p>
+
+      <h2 id="measure-title">
+        Quantify the proposition. Identify the constraints. Test the economics.
+        Examine the alternatives. Then form a view.
+      </h2>
+
+      <p>
+        Different technologies, projects, policies and market claims become
+        more useful when they are put onto a comparable basis.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-brand">
+
+          <!-- LOGO USED AGAIN IN THE FOOTER -->
+          <img
+            class="footer-logo"
+            src="logo.png"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="footer-title">
+            Common Measure<br>
+            Institute
+          </div>
+        </div>
+
+        <p class="footer-copy">
+          An independent research and publishing initiative. Research is based
+          on publicly available information unless otherwise stated. Views and
+          conclusions are provisional and may change as evidence changes.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a
+          href="https://github.com/The-Common-Measure-Institute"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub</a>
+
+        <span>© <span id="year">2026</span></span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
